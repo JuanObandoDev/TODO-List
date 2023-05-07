@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { TodosContext } from "../../contexts/todosContext/todosContext";
 
 import styles from "../../styles/TodoItem.module.css";
 
+const completeTodo = (text, todos, setTodos) => {
+  const todoIndex = todos.findIndex((todo) => todo.text === text);
+  const newTodos = [...todos];
+  newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+  setTodos(newTodos);
+};
+
+const deleteTodo = (text, todos, setTodos) => {
+  const todoIndex = todos.findIndex((todo) => todo.text === text);
+  const newTodos = [...todos];
+  newTodos.splice(todoIndex, 1);
+  setTodos(newTodos);
+};
+
 export function TodoItem(props) {
+  const { todos, setTodos } = useContext(TodosContext);
+
   return (
     <li className={styles.item}>
       <span
+        onClick={() => completeTodo(props.text, todos, setTodos)}
         className={`${styles.checkIcon} ${styles.icon} ${
           props.completed && styles.checkIconActive
         }`}
@@ -19,7 +38,12 @@ export function TodoItem(props) {
       >
         {props.text}
       </p>
-      <span className={`${styles.icon} ${styles.deleteIcon}`}>X</span>
+      <span
+        onClick={() => deleteTodo(props.text, todos, setTodos)}
+        className={`${styles.icon} ${styles.deleteIcon}`}
+      >
+        X
+      </span>
     </li>
   );
 }
