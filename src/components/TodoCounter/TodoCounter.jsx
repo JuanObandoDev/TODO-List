@@ -10,12 +10,12 @@ export function TodoCounter() {
   return (
     <h2 className={styles.title}>
       {todos.length === 0
-        ? "No hay TODOs"
+        ? "There are no TODOs"
         : todos.filter((todo) => todo.completed).length !== todos.length
-        ? `Has completado ${todos.filter((todo) => todo.completed).length} de ${
-            todos.length
-          } TODOs`
-        : "¡Felicidades! ¡Completaste todos tus TODOs!"}
+        ? `You have completed${
+            todos.filter((todo) => todo.completed).length
+          } of ${todos.length} TODOs`
+        : "Congratulations! You completed all of your TODOs!"}
     </h2>
   );
 }
