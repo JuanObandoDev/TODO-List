@@ -13,7 +13,7 @@ export const useLocalStorage = (itemName, initialValue) => {
 
   const [item, setItem] = useState(parsedItem);
   const saveItem = (newItem) => {
-    localStorage.setItem("TODO-List-v1", JSON.stringify(newItem));
+    localStorage.setItem(itemName, JSON.stringify(newItem));
     setItem(newItem);
   };
 
