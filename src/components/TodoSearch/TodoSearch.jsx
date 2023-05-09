@@ -11,7 +11,7 @@ export function TodoSearch() {
     <input
       type="text"
       className={styles.searchBar}
-      placeholder="Type any text"
+      placeholder="Search todo..."
       value={search}
       onChange={(e) => setSearch(e.target.value)}
     />
