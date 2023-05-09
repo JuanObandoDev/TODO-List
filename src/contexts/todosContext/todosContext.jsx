@@ -5,11 +5,23 @@ import { useLocalStorage } from "../../hooks/useLocalStorage/useLocalStorage";
 export const TodosContext = createContext();
 
 export const TodosContextProvider = ({ children }) => {
-  const [todos, setTodos] = useLocalStorage("TODO-List-v1", []);
+  const { item, saveItem, loading, error } = useLocalStorage(
+    "TODO-List-v1",
+    []
+  );
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <TodosContext.Provider value={{ todos, setTodos, openModal, setOpenModal }}>
+    <TodosContext.Provider
+      value={{
+        todos: item,
+        setTodos: saveItem,
+        error,
+        loading,
+        openModal,
+        setOpenModal,
+      }}
+    >
       {children}
     </TodosContext.Provider>
   );
