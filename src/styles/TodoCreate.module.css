@@ -1,4 +1,5 @@
 .createTodoBtn {
+    z-index: 1000;
     background: #61dafa;
     box-shadow: 0 5px 25px rgba(97, 218, 250, .5);
     border: none;
