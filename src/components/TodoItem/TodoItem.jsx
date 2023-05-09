@@ -18,28 +18,28 @@ const deleteTodo = (text, todos, setTodos) => {
   setTodos(newTodos);
 };
 
-export function TodoItem(props) {
+export function TodoItem({ text, completed }) {
   const { todos, setTodos } = useContext(TodosContext);
 
   return (
     <li className={styles.item}>
       <span
-        onClick={() => completeTodo(props.text, todos, setTodos)}
+        onClick={() => completeTodo(text, todos, setTodos)}
         className={`${styles.checkIcon} ${styles.icon} ${
-          props.completed && styles.checkIconActive
+          completed && styles.checkIconActive
         }`}
       >
         √
       </span>
       <p
         className={`${styles.description} ${
-          props.completed && styles.descriptionCrossOut
+          completed && styles.descriptionCrossOut
         }`}
       >
-        {props.text}
+        {text}
       </p>
       <span
-        onClick={() => deleteTodo(props.text, todos, setTodos)}
+        onClick={() => deleteTodo(text, todos, setTodos)}
         className={`${styles.icon} ${styles.deleteIcon}`}
       >
         X
