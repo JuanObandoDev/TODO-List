@@ -12,7 +12,7 @@ export function TodoCounter() {
       {todos.length === 0
         ? "There are no TODOs"
         : todos.filter((todo) => todo.completed).length !== todos.length
-        ? `You have completed${
+        ? `You have completed ${
             todos.filter((todo) => todo.completed).length
           } of ${todos.length} TODOs`
         : "Congratulations! You completed all of your TODOs!"}
