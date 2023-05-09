@@ -18,6 +18,7 @@
 }
 
 .textarea {
+  resize: none;
   background-color: #f9fbfc;
   border: 2px solid #202329;
   border-radius: 2px;
