@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faX } from "@fortawesome/free-solid-svg-icons";
+
 import { TodosContext } from "../../contexts/todosContext/todosContext";
 
 import styles from "../../styles/TodoItem.module.css";
@@ -29,7 +32,7 @@ export function TodoItem({ text, completed }) {
           completed && styles.checkIconActive
         }`}
       >
-        √
+        <FontAwesomeIcon icon={faCheck} />
       </span>
       <p
         className={`${styles.description} ${
@@ -42,7 +45,7 @@ export function TodoItem({ text, completed }) {
         onClick={() => deleteTodo(text, todos, setTodos)}
         className={`${styles.icon} ${styles.deleteIcon}`}
       >
-        X
+        <FontAwesomeIcon icon={faX} />
       </span>
     </li>
   );
