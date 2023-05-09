@@ -8,8 +8,6 @@ import { TodoForm } from "./components/TodoForm/TodoForm";
 import { SearchContextProvider } from "./contexts/searchContext/searchContext";
 import { TodosContextProvider } from "./contexts/todosContext/todosContext";
 
-import "./styles/App.css";
-
 function App() {
   return (
     <TodosContextProvider>
