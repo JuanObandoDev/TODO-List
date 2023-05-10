@@ -1,9 +1,6 @@
 .loadContainer {
   height: 71px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   margin-top: 24px;
   box-shadow: 0 5px 50px rgba(32, 35, 41, 0.15);
 }
@@ -18,5 +15,19 @@
   }
   100% {
     background-color: hsl(0, 0%, 100%);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loadContainer {
+    margin: 24px 0 0 100px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .loadContainer {
+    margin: 24px 0 0 300px;
+    width: calc(100% - 600px);
   }
 }
