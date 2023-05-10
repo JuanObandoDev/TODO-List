@@ -30,6 +30,5 @@ export const useLocalStorage = (itemName, initialValue) => {
       setError(error);
     }
   };
-
   return { item, saveItem, loading, error };
 };
