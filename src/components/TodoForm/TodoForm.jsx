@@ -6,7 +6,17 @@ import styles from "../../styles/TodoForm.module.css";
 
 const addTodo = (event, text, todos, setTodos, setOpenModal) => {
   event.preventDefault();
+  if (text === "") {
+    alert("You must write something");
+    return;
+  }
   const newTodos = [...todos];
+  for (let i = 0; i < newTodos.length; i++) {
+    if (newTodos[i].text === text) {
+      alert("This TODO already exists");
+      return;
+    }
+  }
   newTodos.push({
     text: text,
     completed: false,
